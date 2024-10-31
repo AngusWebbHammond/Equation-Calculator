@@ -25,4 +25,6 @@ This takes in a list of strings from the Lexeme Returner and returns a list of T
 
 ## Syntax Analyser
 
+This takes in a list of Tokens and returns if true or false, if false, then it will return the index of the token list, for any error messages.
+
 ## Tree Representer
