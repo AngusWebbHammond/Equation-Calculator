@@ -1,10 +1,11 @@
 from equation_expression_calculator import equation_expression_calculator
 from lexical_analyser import *
 
-print(equation_expression_calculator("32+5"))  # Expect output of 37
-print(equation_expression_calculator("32*5"))  # Expect output of 160
-print(equation_expression_calculator("32/5"))  # Expect output of 6.4
-print(equation_expression_calculator("32-5"))  # Expect output of 25
+print(equation_expression_calculator("32+5"))  # Expect output of 37 (Addition)
+print(equation_expression_calculator("32*5"))  # Expect output of 160 (Multiplication)
+print(equation_expression_calculator("32/5"))  # Expect output of 6.4 (Divison)
+print(equation_expression_calculator("32-5"))  # Expect output of 25 (Subtraction)
+print(equation_expression_calculator("4^3"))  # Expect output of 64 (Power)
 
 print(
     lexical_analyser("32+5")

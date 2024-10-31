@@ -10,6 +10,8 @@ class Operator:
             self.operator = "*"
         elif operator_token == "DIVISION":
             self.operator = "/"
+        elif operator_token == "POWER":
+            self.operator = "^"
         else:
             self.operator = "+"
 
@@ -25,6 +27,8 @@ class Operator:
             return self.left.get_value() * self.right.get_value()
         elif self.operator == "/":
             return self.left.get_value() / self.right.get_value()
+        elif self.operator == "^":
+            return self.left.get_value() ** self.right.get_value()
         else:
             return self.left.get_value() + self.right.get_value()
 

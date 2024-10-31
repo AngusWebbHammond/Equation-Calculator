@@ -7,7 +7,7 @@ def return_tree_representation(lexeme_list: list, token_list: list) -> Expressio
     bidmas_index: int = 0
     operator_order = [
         "INTEGER",
-        "INDICIE",
+        "POWER",
         "DIVISION",
         "MULTIPLY",
         "ADDITION",

@@ -54,6 +54,8 @@ def token_returner(lexeme_list: list) -> list:
                 token_list.append("LPAREN")
             elif lexeme == ")":
                 token_list.append("RPAREN")
+            elif lexeme == "^":
+                token_list.append("POWER")
             else:
                 print(
                     "Not a valid lexeme, either add a new lexeme to the token list, or retype the equation."
