@@ -1,3 +1,6 @@
+import sys
+
+
 def lexical_analyser(input_equation: str) -> list:
     lexeme_list = lexeme_returner(input_equation)
     token_list = token_returner(lexeme_list)
@@ -57,7 +60,7 @@ def token_returner(lexeme_list: list) -> list:
             elif lexeme == "^":
                 token_list.append("POWER")
             else:
-                print(
+                sys.exit(
                     "Not a valid lexeme, either add a new lexeme to the token list, or retype the equation."
                 )
 

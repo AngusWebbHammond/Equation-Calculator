@@ -1,6 +1,3 @@
-from lexical_analyser import lexical_analyser
-
-
 def syntax_analyser(token_list: list) -> tuple[bool, int] | bool:
     number_paren_open: int = 0
     is_previous_token_operator: bool = False
@@ -19,7 +16,7 @@ def syntax_analyser(token_list: list) -> tuple[bool, int] | bool:
         if token == "INTEGER":
             is_previous_token_operator = False
             continue
-        if token in ["ADDITION", "SUBTRACT", "MULTIPLY", "DIVISION"]:
+        if token in ["ADDITION", "SUBTRACT", "MULTIPLY", "DIVISION", "POWER"]:
             if index == 0:
                 return (False, index)
             if is_previous_token_operator == True:
