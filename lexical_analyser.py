@@ -43,7 +43,7 @@ def token_returner(lexeme_list: list) -> list:
             elif lexeme == "-":
                 token_list.append("SUBTRACT")
             elif lexeme == "/":
-                token_list.append("DIVIDE")
+                token_list.append("DIVISION")
             elif lexeme == "*":
                 token_list.append("MULTIPLY")
             elif lexeme == "(":
@@ -55,4 +55,4 @@ def token_returner(lexeme_list: list) -> list:
             
     return token_list
 
-print(lexical_analyser("(32+432)*(3234325+322-3432/234)"))
+# print(lexical_analyser("(32+432)*(3234325+322-3432/234)"))
