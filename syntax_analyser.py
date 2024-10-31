@@ -29,5 +29,3 @@ def syntax_analyser (token_list: list) -> tuple[bool, int] | bool:
         return True
     else:
         return False
-
-# print(syntax_analyser(lexical_analyser("(32+432)*(3234325+322-3432/234)*234324+234234-23423542")[1]))

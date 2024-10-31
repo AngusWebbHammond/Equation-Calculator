@@ -54,5 +54,3 @@ def token_returner(lexeme_list: list) -> list:
                 print("Not a valid lexeme, either add a new lexeme to the token list, or retype the equation.")
             
     return token_list
-
-# print(lexical_analyser("(32+432)*(3234325+322-3432/234)"))

@@ -16,5 +16,3 @@ def equation_expression_calculator(input_equation: str) -> int | float | None | 
     except:
         tree_representation = return_tree_representation(lexeme_list, token_list)
     return tree_representation.get_value()
-
-print(equation_expression_calculator("35345+345345468657985679865"))

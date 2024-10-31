@@ -51,7 +51,3 @@ class Expression:
     
     def get_value(self):
         return self.input_class.get_value()
-        
-# a = Operator(Operator(Integer(23), Integer(34), "ADDITION"), Integer(27), "MULTIPLY")
-
-# print(a.get_value())
