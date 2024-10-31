@@ -11,9 +11,6 @@ def equation_expression_calculator(
         return None
     lexeme_list, token_list = lexical_analyser(input_equation)
     is_syntax_valid = syntax_analyser(token_list)
-
-    print(lexeme_list, token_list, is_syntax_valid)
-
     if is_syntax_valid[0] == False:
         sys.exit(
             "Syntax Error with the equation provided, this may be found at index "
