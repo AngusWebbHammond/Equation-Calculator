@@ -27,6 +27,6 @@ def syntax_analyser(token_list: list) -> tuple[bool, int] | bool:
             is_previous_token_operator = True
 
     if number_paren_open == 0:
-        return True
+        return (True, -1)
     else:
-        return False
+        return (False, 0)

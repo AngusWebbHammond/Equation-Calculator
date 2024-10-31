@@ -1,6 +1,7 @@
 from lexical_analyser import lexical_analyser
 from syntax_analyser import syntax_analyser
 from tree_representer import return_tree_representation
+import sys
 
 
 def equation_expression_calculator(
@@ -13,10 +14,11 @@ def equation_expression_calculator(
 
     print(lexeme_list, token_list, is_syntax_valid)
 
-    # try:
-    #     if not is_syntax_valid[0]:
-    #         return SyntaxError
-    # except:
+    if is_syntax_valid[0] == False:
+        sys.exit(
+            "Syntax Error with the equation provided, this may be found at index "
+            + str(is_syntax_valid[1])
+        )
     tree_representation = return_tree_representation(lexeme_list, token_list)
     return tree_representation.get_value()
 
