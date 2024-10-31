@@ -6,7 +6,7 @@ import sys
 
 def equation_expression_calculator(
     input_equation: str,
-) -> int | float | None | SyntaxError:
+) -> int | float | None | str:
     if type(input_equation) != str:
         return None
     lexeme_list, token_list = lexical_analyser(input_equation)
@@ -18,6 +18,3 @@ def equation_expression_calculator(
         )
     tree_representation = return_tree_representation(lexeme_list, token_list)
     return tree_representation.get_value()
-
-
-print(equation_expression_calculator("345344+ 212433-2314324*3"))
