@@ -1,9 +1,10 @@
-def lexical_analyser (input_equation: str) -> list:
+def lexical_analyser(input_equation: str) -> list:
     lexeme_list = lexeme_returner(input_equation)
     token_list = token_returner(lexeme_list)
     return [lexeme_list, token_list]
 
-def lexeme_returner (input_equation: str) -> list:
+
+def lexeme_returner(input_equation: str) -> list:
     lexeme_list: list = []
     currently_checked_value: str = ""
     previous_type = str
@@ -21,6 +22,8 @@ def lexeme_returner (input_equation: str) -> list:
                 lexeme_list.append(value)
                 previous_type = ""
                 currently_checked_value = ""
+            elif value == " ":
+                continue
             else:
                 lexeme_list.append(value)
                 previous_type = ""
@@ -28,8 +31,9 @@ def lexeme_returner (input_equation: str) -> list:
 
     if previous_type == int:
         lexeme_list.append(currently_checked_value)
-    
+
     return lexeme_list
+
 
 def token_returner(lexeme_list: list) -> list:
     token_list: list = []
@@ -51,6 +55,8 @@ def token_returner(lexeme_list: list) -> list:
             elif lexeme == ")":
                 token_list.append("RPAREN")
             else:
-                print("Not a valid lexeme, either add a new lexeme to the token list, or retype the equation.")
-            
+                print(
+                    "Not a valid lexeme, either add a new lexeme to the token list, or retype the equation."
+                )
+
     return token_list
