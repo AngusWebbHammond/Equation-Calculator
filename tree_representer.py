@@ -1,5 +1,4 @@
 from equation_classes import Expression, Integer, Operator
-from lexical_analyser import lexical_analyser
 
 
 def return_tree_representation(lexeme_list: list, token_list: list) -> Expression:
