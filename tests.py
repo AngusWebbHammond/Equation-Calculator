@@ -6,6 +6,10 @@ print(equation_expression_calculator("32*5"))  # Expect output of 160 (Multiplic
 print(equation_expression_calculator("32/5"))  # Expect output of 6.4 (Divison)
 print(equation_expression_calculator("32-5"))  # Expect output of 25 (Subtraction)
 print(equation_expression_calculator("4^3"))  # Expect output of 64 (Power)
+print(
+    equation_expression_calculator("(2+(324*3/43+32)^2)+34")
+)  # Expect output of 3017.66792861006 (Brackets)
+
 
 print(
     lexical_analyser("32+5")

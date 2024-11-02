@@ -71,14 +71,3 @@ def no_bracket_representation(lexeme_list_with_bracket: list, token_list: list):
             temp_lexeme_list, temp_token_list
         )
     return temp_lexeme_list, temp_token_list
-
-
-# print(
-#     return_tree_representation(
-#         *no_bracket_representation(
-#             *lexical_analyser(
-#                 ["(", "2", "+", "(", "43", "*", "23", ")", "^", "2", ")", "+", "34"]
-#             ),
-#         )
-#     ).get_value()
-# )

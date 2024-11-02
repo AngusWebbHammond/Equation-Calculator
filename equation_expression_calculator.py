@@ -1,6 +1,6 @@
 from lexical_analyser import lexical_analyser
 from syntax_analyser import syntax_analyser
-from tree_representer import return_tree_representation
+from tree_representer import return_tree_representation, no_bracket_representation
 import sys
 
 
@@ -16,5 +16,7 @@ def equation_expression_calculator(
             "Syntax Error with the equation provided, this may be found at index "
             + str(is_syntax_valid[1])
         )
-    tree_representation = return_tree_representation(lexeme_list, token_list)
+    tree_representation = return_tree_representation(
+        *no_bracket_representation(lexeme_list, token_list)
+    )
     return tree_representation.get_value()
