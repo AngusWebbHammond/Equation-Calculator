@@ -23,6 +23,12 @@ def return_tree_representation(lexeme_list: list, token_list: list) -> Expressio
             ):
                 second_compressed_list[index] = [Integer(lexeme), "INTEGER"]
                 continue
+            if type(token) == list:
+                compressed_lists[index] = [
+                    return_tree_representation(*compressed_lists[index]),
+                    "EXPRESSION",
+                ]
+                continue
             if token == operator_order[bidmas_index]:
                 second_compressed_list[index] = [
                     Operator(
@@ -49,7 +55,6 @@ def no_bracket_representation(lexeme_list_with_bracket: list, token_list: list):
     temp_lexeme_list = lexeme_list_with_bracket
 
     for index, token in enumerate(token_list):
-        print(index)
         if token == "LPAREN":
             bracket_start_index.append(index)
         if token == "RPAREN":
@@ -69,9 +74,11 @@ def no_bracket_representation(lexeme_list_with_bracket: list, token_list: list):
 
 
 # print(
-#     no_bracket_representation(
-#         *lexical_analyser(
-#             ["(", "2", "+", "(", "43", "*", "23", ")", "^", "2", ")", "+", "34"]
-#         ),
-#     )
+#     return_tree_representation(
+#         *no_bracket_representation(
+#             *lexical_analyser(
+#                 ["(", "2", "+", "(", "43", "*", "23", ")", "^", "2", ")", "+", "34"]
+#             ),
+#         )
+#     ).get_value()
 # )
