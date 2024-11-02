@@ -1,4 +1,5 @@
 from equation_classes import Expression, Integer, Operator
+from lexical_analyser import lexical_analyser
 
 
 def return_tree_representation(lexeme_list: list, token_list: list) -> Expression:
@@ -40,3 +41,37 @@ def return_tree_representation(lexeme_list: list, token_list: list) -> Expressio
         compressed_lists = second_compressed_list
 
     return Expression(compressed_lists[0][0])
+
+
+def no_bracket_representation(lexeme_list_with_bracket: list, token_list: list):
+    bracket_start_index: list[int] = []
+    temp_token_list = token_list
+    temp_lexeme_list = lexeme_list_with_bracket
+
+    for index, token in enumerate(token_list):
+        print(index)
+        if token == "LPAREN":
+            bracket_start_index.append(index)
+        if token == "RPAREN":
+            temp_lexeme_list[bracket_start_index[-1] : index + 1] = [
+                temp_lexeme_list[bracket_start_index[-1] + 1 : index],
+            ]
+            temp_token_list[bracket_start_index[-1] : index + 1] = [
+                temp_token_list[bracket_start_index[-1] + 1 : index],
+            ]
+            break
+
+    if len(bracket_start_index) > 0:
+        temp_lexeme_list, temp_token_list = no_bracket_representation(
+            temp_lexeme_list, temp_token_list
+        )
+    return temp_lexeme_list, temp_token_list
+
+
+# print(
+#     no_bracket_representation(
+#         *lexical_analyser(
+#             ["(", "2", "+", "(", "43", "*", "23", ")", "^", "2", ")", "+", "34"]
+#         ),
+#     )
+# )
