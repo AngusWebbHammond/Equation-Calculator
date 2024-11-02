@@ -9,6 +9,10 @@ print(equation_expression_calculator("4^3"))  # Expect output of 64 (Power)
 print(
     equation_expression_calculator("(2+(324*3/43+32)^2)+34")
 )  # Expect output of 3017.66792861006 (Brackets)
+print(equation_expression_calculator("(2+3)^(2*3)"))  # Expect output of 15625
+print(
+    equation_expression_calculator("34*23/(2+279)")
+)  # Expect output of 2.7829181494661923
 
 
 print(

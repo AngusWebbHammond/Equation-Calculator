@@ -1,34 +1,37 @@
-# Mathematical Equation Compiler
+# Mathematical Equation Calculator
 
-Uses Python to convert a mathematical equation from string to calculated value
+Uses Python 3.12 or later to convert an equation as a string to a value.
 
 ## Equation Calculator
 
-Takes as an input the equation string, and returns the calculated value using .get_value() of the Expression class
+### How to Use
 
-## Lexical Analyser
+```python
+import equation_expression_calculator from equation_expression_calculator
 
-The lexical analyser is comprised of two different functions, lexeme_returner and token_returner.
-The input is an equation string, which returns both the lexeme list and the token list, which can then be further interpretated by the Syntax analyser and then be converted to a tree to be calculated.
+print(equation_expression_calculator("INPUT YOUR EQUATION HERE"))
+```
 
-### Lexeme Returner
+This returns the value of the equation you inputed as a number.
 
-This takes in a string and returns a list of strings.
+### Allowed Operations
 
-#### Current Valid Lexemes
+| Operation   | Allowed Value | Expected Use |
+| ----------- | ------------- | ------------ |
+| Multiply    | \*            | a \* b       |
+| Addition    | +             | a + b        |
+| Subtraction | -             | a - b        |
+| Division    | /             | a / b        |
+| Powers      | ^             | a ^ b        |
 
-- Any Natural Number
-- Basic Operators: +, -, /, \*
-- Left and Right Brackets
+### Example Inputs
 
-### Token Returner
+```python
+print(equation_expression_calculator("(2+3)^(2*3)"))
 
-This takes in a list of strings from the Lexeme Returner and returns a list of Tokens.
+# Output: 15625
 
-## Syntax Analyser
+print(equation_expression_calculator("34*23/(2+279)"))
 
-This takes in a list of Tokens and returns if true or false, if false, then it will return the index of the token list, for any error messages.
-
-## Tree Representer
-
-Takes the lexeme and token lists and returns an expression which is of class Expression, that can be have get_value() called to calculate the equation
+# Output: 2.7829181494661923
+```
