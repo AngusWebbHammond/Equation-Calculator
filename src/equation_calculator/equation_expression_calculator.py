@@ -1,6 +1,9 @@
-from lexical_analyser import lexical_analyser
-from syntax_analyser import syntax_analyser
-from tree_representer import return_tree_representation, no_bracket_representation
+from equation_calculator.analyser.lexical_analyser import lexical_analyser
+from equation_calculator.analyser.syntax_analyser import syntax_analyser
+from equation_calculator.representer.tree_representer import (
+    return_tree_representation,
+    no_bracket_representation,
+)
 import sys
 
 

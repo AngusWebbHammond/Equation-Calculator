@@ -1,4 +1,8 @@
-from equation_classes import Expression, Integer, Operator
+from equation_calculator.representer.equation_classes import (
+    Expression,
+    Integer,
+    Operator,
+)
 
 
 def return_tree_representation(lexeme_list: list, token_list: list) -> Expression:

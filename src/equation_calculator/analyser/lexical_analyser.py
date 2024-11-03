@@ -65,3 +65,6 @@ def token_returner(lexeme_list: list) -> list:
                 )
 
     return token_list
+
+
+print(lexical_analyser("(2+3)^(2*3)"))

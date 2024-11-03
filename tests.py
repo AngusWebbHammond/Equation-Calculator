@@ -1,5 +1,7 @@
-from equation_expression_calculator import equation_expression_calculator
-from lexical_analyser import *
+from equation_calculator.equation_expression_calculator import (
+    equation_expression_calculator,
+)
+from equation_calculator.analyser.lexical_analyser import *
 
 print(equation_expression_calculator("32+5"))  # Expect output of 37 (Addition)
 print(equation_expression_calculator("32*5"))  # Expect output of 160 (Multiplication)
